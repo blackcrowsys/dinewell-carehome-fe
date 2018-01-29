@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import { Injectable, Injector } from '@angular/core';
-import {Router} from "@angular/router";
-import {TranslateService} from "@ngx-translate/core";
+import {HttpClient} from '@angular/common/http';
+import { Injector } from '@angular/core';
+import {Router} from '@angular/router';
+import {User} from '../_models/user.model';
 
 @Component({
     selector: 'login',
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
     submitLogin(url: string) {
         const router = this.injector.get(Router);
-        console.log("url is "+ url);
+        console.log('url is ' + url);
         localStorage.setItem('url', JSON.stringify(url));
 
         this.http.get<User>('http://localhost:3000/api-login').subscribe(data => {
