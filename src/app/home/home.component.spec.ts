@@ -10,8 +10,6 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {UserService} from '../_services/user.service';
 import {DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
-import {User} from '../_models/user.model';
-
 
 
 describe('HomeComponent', () => {

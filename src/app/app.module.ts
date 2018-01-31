@@ -14,6 +14,8 @@ import {AppRoutingModule} from "app/app-routing.module";
 import {AuthGuard} from "./_guards/auth.guard";
 import {NgxPermissionsModule} from "ngx-permissions";
 import {UserService} from "./_services/user.service";
+import { ResidentService } from './_services/resident.service';
+import { ResidentsComponent } from './residents/residents.component';
 
 // for AoT,  returns a Object that can load Translations using Http and .json
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -26,7 +28,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         FooterComponent,
         LoginComponent,
         NavbarComponent,
-        HomeComponent
+        HomeComponent,
+        ResidentsComponent
     ],
     imports: [
         BrowserModule,
@@ -42,7 +45,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
             }
         })
     ],
-    providers: [AuthGuard, UserService],
+    providers: [AuthGuard, UserService, ResidentService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
