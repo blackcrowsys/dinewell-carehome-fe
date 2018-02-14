@@ -1,61 +1,77 @@
-<footer class="footer">
-    <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
+<footer class="mainfooter" role="listlinks">
+    <div class="footer-middle navbar-dark">
+        <div class="container">
             <div class="row">
-                <!-- Residents -->
-                <div class="col-xs-2">
-                        <ul class="footer-nav">
-                            <li class="first">{{ 'NAV.RESIDENTS' | translate }}</li>
-                            <li><a href="/residents">{{ 'NAV.RESIDENTS' | translate }}</a></li>
-                            <li><a href="/incidents">{{ 'NAV.INCIDENTS' | translate }}</a></li>
-                            <li><a href="/booking">{{ 'NAV.BOOKINGS' | translate }}</a></li>
+                <div class="col-md-2 col-sm-6">
+                    <!--Column1-->
+                    <div class="footer-pad">
+                        <h4>{{ 'NAV.RESIDENTS' | translate }}</h4>
+                        <ul class="list-unstyled">
+                        <li><a href="/residents">{{ 'NAV.RESIDENTS' | translate }}</a></li>
+                        <li><a href="/incidents">{{ 'NAV.INCIDENTS' | translate }}</a></li>
+                        <li><a href="/booking">{{ 'NAV.BOOKINGS' | translate }}</a></li>
                         </ul>
+                    </div>
                 </div>
-                <!-- Reports -->
-                    <div class="col-xs-2">
-                        <ul class="footer-nav">
-                            <li class="first">{{ 'NAV.REPORTS' | translate }}</li>
+                <div class="col-md-2 col-sm-6">
+                    <!--Column1-->
+                    <div class="footer-pad">
+                        <h4>{{ 'NAV.REPORTS' | translate }}</h4>
+                        <ul class="list-unstyled">
                             <li><a href="/report/meal-booking">{{ 'NAV.DAILY_BOOKINGS' | translate }}</a></li>
                             <li><a href="/report/meal-booking-summary">{{ 'NAV.BOOKING_SUMMARY' | translate }}</a></li>
                         </ul>
                     </div>
-                <!-- Food/Meals, etc -->
-                <div class="col-xs-2">>
-                        <ul class="footer-nav">
-                            <li class="first">{{ 'NAV.FOODM_MANAGEMNT' | translate }}</li>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <!--Column1-->
+                    <div class="footer-pad">
+                        <h4>{{ 'NAV.FOODM_MANAGEMNT' | translate }}</h4>
+                        <ul class="list-unstyled">
                             <li><a href="/seasonal-menus">{{ 'NAV.SEASONAL' | translate }}</a></li>
                             <li><a href="/weekly-menus"> {{ 'NAV.WEEKLY' | translate }}</a></li>
                             <li><a href="/special-events" >{{ 'NAV.SPECIAL' | translate }}</a></li>
                             <li><a href="/daily-menus" >{{ 'NAV.DAILY' | translate }}</a></li>
                             <li><a href="/meals" >{{ 'NAV.MEALS' | translate }}</a></li>
                         </ul>
+                    </div>
                 </div>
-                <!-- Home sites and occupency -->
-                <div class="col-xs-2">
-                        <ul class="footer-nav">
-                            <li class="first">{{ 'NAV.MANAGEMENT' | translate }}</li>
+                <div class="col-md-2 col-sm-6">
+                    <!--Column1-->
+                    <div class="footer-pad">
+                        <h4>{{ 'NAV.MANAGEMENT' | translate }}</h4>
+                        <ul class="list-unstyled">
                             <li><a href="/staff">{{ 'NAV.STAFF' | translate }}</a></li>
                         </ul>
+                    </div>
                 </div>
-                <!--  System administration -->
-                <div class="col-xs-2">
-                        <ul class="footer-nav">
-                            <li class="first">{{ 'NAV.ADMINSTRATION' | translate }}</li>
+                <div class="col-md-2 col-sm-6">
+                    <!--Column1-->
+                    <div class="footer-pad">
+                        <h4>{{ 'NAV.ADMINSTRATION' | translate }}</h4>
+                        <ul class="list-unstyled">
                             <li><a href="/buildings" >{{ 'NAV.BUILDINGS' | translate }}</a></li>
                             <li><a href="/users" >{{ 'NAV.USERS' | translate }}</a></li>
                         </ul>
+                    </div>
                 </div>
-                <div class="col-xs-2"></div>
             </div>
         </div>
     </div>
-
-    <ul class="list-inline">
-        <li><small>{{ 'LEGAL.COPYRIGHT' | translate}}</small></li>
-        <li>|</li>
-        <li><small>{{ 'LEGAL.LICENSE' | translate}}</small></li>
-        <li>|</li>
-        <li><small>{{ 'LEGAL.ABOUT' | translate}}</small></li>
-    </ul>
-
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!--Footer Bottom-->
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><small>{{ 'LEGAL.COPYRIGHT' | translate}}</small></li>
+                        <li class="list-inline-item">|</li>
+                        <li class="list-inline-item"><small>{{ 'LEGAL.LICENSE' | translate}}</small></li>
+                        <li class="list-inline-item">|</li>
+                        <li class="list-inline-item"><small>{{ 'LEGAL.ABOUT' | translate}}</small></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>

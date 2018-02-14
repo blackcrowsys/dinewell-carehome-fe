@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'dinewell-navbar',
@@ -7,6 +8,8 @@ import {TranslateService} from "@ngx-translate/core";
     styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+    public isCollapsed = false;
 
     constructor(private translate: TranslateService) {
         // this language will be used as a fallback when a translation isn't found in the current language
@@ -21,6 +24,10 @@ export class NavbarComponent implements OnInit {
 
     switchLanguage(language: string) {
         this.translate.use(language);
+    }
+
+    toggleMenu() {
+        this.isCollapsed = !this.isCollapsed;
     }
 
     ngOnInit() {

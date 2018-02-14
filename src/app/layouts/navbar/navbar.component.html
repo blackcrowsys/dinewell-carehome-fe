@@ -1,70 +1,112 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Dinewell</a>
-        </div>
+<div class="container-fluid">
+    <header class="navbar navbar-dark bg-dark navbar-fixed-top navbar-expand-lg">
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" target="_self" data-toggle="dropdown" class="dropdown-toggle">{{ 'NAV.RESIDENTS' |
-                        translate }} <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li role="menuitem"><a href="/residents">{{ 'NAV.RESIDENTS' | translate }}</a></li>
-                        <li role="menuitem"><a href="/incidents">{{ 'NAV.INCIDENTS' | translate }}</a></li>
-                        <li role="menuitem"><a href="/booking">{{ 'NAV.BOOKINGS' | translate }}</a></li>
-                    </ul>
+        <a class="navbar-brand" [routerLink]="['/']" (click)="navbarCollapsed = true">Dinewell</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
+                [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item dropdown">
+                    <div ngbDropdown class="d-inline-block">
+                        <a class="nav-link dropdown-toggle" id="residentDropDown" ngbDropdownToggle>
+                            {{ 'NAV.RESIDENTS' | translate }}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="residentDropDown">
+                            <a class="dropdown-item" [routerLink]="['/residents']" (click)="navbarCollapsed = true">
+                                {{ 'NAV.RESIDENTS' | translate }}
+                            </a>
+                            <a class="dropdown-item" [routerLink]="['/incidents']" (click)="navbarCollapsed = true">
+                                {{ 'NAV.INCIDENTS' | translate }}
+                            </a>
+                            <a class="dropdown-item" [routerLink]="['/booking']" (click)="navbarCollapsed = true">
+                                {{ 'NAV.BOOKINGS' | translate }}
+                            </a>
+                        </div>
+                    </div>
                 </li>
 
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ 'NAV.REPORTS' | translate }} <b
-                        class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/report/meal-booking">{{ 'NAV.DAILY_BOOKINGS' | translate }}</a></li>
-                        <li><a href="/report/meal-booking">{{ 'NAV.BOOKING_SUMMARY' | translate }}</a></li>
-                    </ul>
+                <li class="nav-item dropdown">
+                    <div ngbDropdown class="d-inline-block">
+                        <a class="nav-link dropdown-toggle" id="reportsDropDown" ngbDropdownToggle>
+                            {{ 'NAV.REPORTS' | translate }}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="reportsDropDown">
+                            <a class="dropdown-item" [routerLink]="['//report/meal-booking']"
+                               (click)="navbarCollapsed = true">{{ 'NAV.DAILY_BOOKINGS' | translate }}
+                            </a>
+                            <a class="dropdown-item" [routerLink]="['//report/meal-summary']"
+                               (click)="navbarCollapsed = true">{{ 'NAV.BOOKING_SUMMARY' | translate }}
+                            </a>
+                        </div>
+                    </div>
                 </li>
 
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ 'NAV.FOODM_MANAGEMNT' | translate }}
-                        <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/seasonal-menus">{{ 'NAV.SEASONAL' | translate }}</a></li>
-                        <li><a href="/weekly-menus">{{ 'NAV.WEEKLY' | translate }}</a></li>
-                        <li><a href="/special-events">{{ 'NAV.SPECIAL' | translate }}</a></li>
-                        <li><a href="/daily-menus">{{ 'NAV.DAILY' | translate }}</a></li>
-                        <li role="menuitem"><a href="/meals">{{ 'NAV.MEALS' | translate }}</a></li>
-                    </ul>
+                <li class="nav-item dropdown">
+                    <div ngbDropdown class="d-inline-block">
+                        <a class="nav-link dropdown-toggle" id="foodManagementDropDown" ngbDropdownToggle>
+                            {{ 'NAV.FOODM_MANAGEMNT' | translate }}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="foodManagementDropDown">
+                            <a class="dropdown-item" [routerLink]="['/seasonal-menus']"
+                               (click)="navbarCollapsed = true">
+                                {{ 'NAV.SEASONAL' | translate }}
+                            </a>
+                            <a class="dropdown-item" [routerLink]="['/weekly-menus']" (click)="navbarCollapsed = true">
+                                {{ 'NAV.WEEKLY' | translate }}
+                            </a>
+                            <a class="dropdown-item" [routerLink]="['/special-events']"
+                               (click)="navbarCollapsed = true">
+                                {{ 'NAV.SPECIAL' | translate }}
+                            </a>
+                            <a class="dropdown-item" [routerLink]="['/daily-menus']" (click)="navbarCollapsed = true">
+                                {{ 'NAV.DAILY' | translate }}
+                            </a>
+                            <a class="dropdown-item" [routerLink]="['/meals']" (click)="navbarCollapsed = true">
+                                {{ 'NAV.MEALS' | translate }}
+                            </a>
+                        </div>
+                    </div>
                 </li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown">{{
-                        'NAV.MANAGEMENT' | translate }}<b
-                            class="caret"></b></a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                        <li role="menuitem"><a href="/staff">{{ 'NAV.STAFF' | translate }}</a></li>
-                    </ul>
-                </li>
                 <ng-template ngxPermissionsOnly="ADMIN">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" id="dLabel" role="button"
-                           data-toggle="dropdown">{{ 'NAV.ADMINSTRATION' | translate }}<b class="caret"></b></a>
-
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li role="menuitem"><a href="/buildings">{{ 'NAV.BUILDINGS' | translate }}</a></li>
-                            <li role="menuitem"><a href="/users">{{ 'NAV.USERS' | translate }}</a></li>
-                            <li role="menuitem"><a href="/app-domains">Application Domains</a></li>
-                        </ul>
+                    <li class="nav-item dropdown">
+                        <div ngbDropdown class="d-inline-block">
+                            <a class="nav-link dropdown-toggle" id="adminDropDown" ngbDropdownToggle>
+                                {{ 'NAV.ADMINSTRATION' | translate }}
+                            </a>
+                            <div ngbDropdownMenu aria-labelledby="adminDropDown">
+                                <a class="dropdown-item" [routerLink]="['/buildings']"
+                                   (click)="navbarCollapsed = true">{{ 'NAV.BUILDINGS' | translate }}
+                                </a>
+                                <a class="dropdown-item" [routerLink]="['/users']"
+                                   (click)="navbarCollapsed = true">{{ 'NAV.USERS' | translate }}
+                                </a>
+                                <a class="dropdown-item" [routerLink]="['/app-domains']"
+                                   (click)="navbarCollapsed = true">{{ 'NAV.APP_DOMAINS' | translate }}
+                                </a>
+                            </div>
+                        </div>
                     </li>
                 </ng-template>
+
+                <li class="nav-item dropdown">
+                    <div ngbDropdown class="d-inline-block">
+                        <a class="nav-link dropdown-toggle" id="managementDropDown" ngbDropdownToggle>
+                            {{ 'NAV.MANAGEMENT' | translate }}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="managementDropDown">
+                            <a class="dropdown-item" [routerLink]="['/staff']"
+                               (click)="navbarCollapsed = true">
+                                {{ 'NAV.STAFF' | translate }}
+                            </a>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -78,5 +120,5 @@
                 </li>
             </ul>
         </div>
-    </div>
-</nav>
+    </header>
+</div>

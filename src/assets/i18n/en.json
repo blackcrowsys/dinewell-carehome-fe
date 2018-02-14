@@ -32,6 +32,7 @@
         "STAFF": "Staff",
         "ADMINSTRATION": "Adminsitration",
         "BUILDINGS": "Building Units",
-        "USERS": "Users"
+        "USERS": "Users",
+        "APP_DOMAINS": "Application Domains"
     }
 }

@@ -1,7 +1,10 @@
 <dinewell-navbar></dinewell-navbar>
-<p>
-  residents works!
-</p>
+<h2>Residents</h2>
+<ul class="residents">
+    <li *ngFor="let resident of residents">
+        {{resident.id}} {{resident.firstName}} {{resident.lastName}}
+    </li>
+</ul>
 <footer>
     <dinewell-footer></dinewell-footer>
 </footer>
