@@ -3,6 +3,11 @@
         "TITLE": "Hello ",
         "SELECT": "Change language"
     },
+    "COMMON": {
+        "ACTION": "Action",
+        "VIEW": "View",
+        "DELETE": "Delete"
+    },
     "LEGAL": {
         "COPYRIGHT": "© Copyright Dinewell Technology Limited, 2015-2017. All Rights Reserved.",
         "LICENSE": "License Agreement",
@@ -34,5 +39,12 @@
         "BUILDINGS": "Building Units",
         "USERS": "Users",
         "APP_DOMAINS": "Application Domains"
+    },
+    "RESIDENTS": {
+        "RESIDENTS": "Residents",
+        "ID": "ID",
+        "FIRST_NAME": "First Name",
+        "MIDDLE_NAME": "Middle Name",
+        "LAST_NAME": "Last Name"
     }
 }

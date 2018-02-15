@@ -10,6 +10,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 })
 export class ResidentsComponent implements OnInit {
   residents: Resident[];
+  page = 1;
 
   constructor(private residentService: ResidentService) { }
 

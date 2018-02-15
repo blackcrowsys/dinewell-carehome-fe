@@ -7,6 +7,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {FooterComponent} from 'app/layouts/footer/footer.component';
 import {NavbarComponent} from '../layouts/navbar/navbar.component';
 import {ResidentService} from '../_services/resident.service';
+import {NgbPaginationModule, NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ResidentsComponent', () => {
     let component: ResidentsComponent;
@@ -18,6 +20,9 @@ describe('ResidentsComponent', () => {
                 FooterComponent],
             providers: [ ResidentService],
             imports: [
+                RouterTestingModule,
+                NgbCollapseModule.forRoot(),
+                NgbPaginationModule.forRoot(),
                 TranslateModule.forRoot({
                     loader: {
                         provide: TranslateLoader,

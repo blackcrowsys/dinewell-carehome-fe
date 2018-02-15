@@ -10,6 +10,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {UserService} from '../_services/user.service';
 import {DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
+import { RouterTestingModule } from "@angular/router/testing";
+import { NgbCollapseModule } from "@ng-bootstrap/ng-bootstrap";
 
 
 describe('HomeComponent', () => {
@@ -44,6 +46,8 @@ describe('HomeComponent', () => {
                 {provide: UserService, useValue: userServiceStub}
             ],
             imports: [
+                RouterTestingModule,
+                NgbCollapseModule.forRoot(),
                 TranslateModule.forRoot({
                     loader : {
                         provide: TranslateLoader,
@@ -66,7 +70,7 @@ describe('HomeComponent', () => {
     it('should welcome the user', () => {
         fixture.detectChanges();
         const content = el.textContent;
-        expect(content).toContain('Welcome', '"Welcome..."');
+        expect(content).toContain('Hello', '"Welcome..."');
     });
 
     it('should create', () => {
