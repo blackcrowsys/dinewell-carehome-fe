@@ -1,0 +1,37 @@
+{
+    "HOME": {
+        "TITLE": "Hello ",
+        "SELECT": "Change language"
+    },
+    "LEGAL": {
+        "COPYRIGHT": "© Copyright Dinewell Technology Limited, 2015-2017. All Rights Reserved.",
+        "LICENSE": "License Agreement",
+        "ABOUT": "About Dinewell Hospital Care"
+    },
+    "LOGIN": {
+        "TITLE": "Login",
+        "USERNAME": "Username",
+        "PASSWORD": "Password",
+        "URL": "URL",
+        "SUBMIT": "Submit"
+    },
+    "NAV": {
+        "RESIDENTS": "Residents",
+        "INCIDENTS": "Incidents",
+        "BOOKINGS": "Book Food & Drinks",
+        "REPORTS": "Reports",
+        "DAILY_BOOKINGS": "Daily Meal Bookings",
+        "BOOKING_SUMMARY": "Meal Bookings Summary",
+        "FOODM_MANAGEMNT": "Food Management",
+        "SEASONAL": "Seasonal Menu",
+        "WEEKLY": "Weekly Menu",
+        "SPECIAL": "Holiday/Special Events",
+        "DAILY": "Daily Menu",
+        "MEALS": "Meals",
+        "MANAGEMENT": "Mangement",
+        "STAFF": "Staff",
+        "ADMINSTRATION": "Adminsitration",
+        "BUILDINGS": "Building Units",
+        "USERS": "Users"
+    }
+}

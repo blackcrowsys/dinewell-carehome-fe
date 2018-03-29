@@ -1,0 +1,82 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Dinewell</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" target="_self" data-toggle="dropdown" class="dropdown-toggle">{{ 'NAV.RESIDENTS' |
+                        translate }} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li role="menuitem"><a href="/residents">{{ 'NAV.RESIDENTS' | translate }}</a></li>
+                        <li role="menuitem"><a href="/incidents">{{ 'NAV.INCIDENTS' | translate }}</a></li>
+                        <li role="menuitem"><a href="/booking">{{ 'NAV.BOOKINGS' | translate }}</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ 'NAV.REPORTS' | translate }} <b
+                        class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/report/meal-booking">{{ 'NAV.DAILY_BOOKINGS' | translate }}</a></li>
+                        <li><a href="/report/meal-booking">{{ 'NAV.BOOKING_SUMMARY' | translate }}</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ 'NAV.FOODM_MANAGEMNT' | translate }}
+                        <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/seasonal-menus">{{ 'NAV.SEASONAL' | translate }}</a></li>
+                        <li><a href="/weekly-menus">{{ 'NAV.WEEKLY' | translate }}</a></li>
+                        <li><a href="/special-events">{{ 'NAV.SPECIAL' | translate }}</a></li>
+                        <li><a href="/daily-menus">{{ 'NAV.DAILY' | translate }}</a></li>
+                        <li role="menuitem"><a href="/meals">{{ 'NAV.MEALS' | translate }}</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown">{{
+                        'NAV.MANAGEMENT' | translate }}<b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li role="menuitem"><a href="/staff">{{ 'NAV.STAFF' | translate }}</a></li>
+                    </ul>
+                </li>
+                <ng-template ngxPermissionsOnly="ADMIN">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" id="dLabel" role="button"
+                           data-toggle="dropdown">{{ 'NAV.ADMINSTRATION' | translate }}<b class="caret"></b></a>
+
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <li role="menuitem"><a href="/buildings">{{ 'NAV.BUILDINGS' | translate }}</a></li>
+                            <li role="menuitem"><a href="/users">{{ 'NAV.USERS' | translate }}</a></li>
+                            <li role="menuitem"><a href="/app-domains">Application Domains</a></li>
+                        </ul>
+                    </li>
+                </ng-template>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <label>
+                        <select #langSelect (change)="translate.use(langSelect.value)">
+                            <option *ngFor="let lang of translate.getLangs()" [value]="lang"
+                                    [selected]="lang === translate.currentLang">{{ lang }}
+                            </option>
+                        </select>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
