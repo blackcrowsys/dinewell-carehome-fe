@@ -45,7 +45,7 @@ describe('ResidentService', () => {
             expect(residents).toEqual(dummyResidents);
         });
 
-        const req = httpMock.expectOne(`${service.API_URL}/api-resident-list`);
+        const req = httpMock.expectOne(`${service.API_URL}/api/residents`);
         expect(req.request.method).toBe('GET');
         req.flush(dummyResidents);
     });

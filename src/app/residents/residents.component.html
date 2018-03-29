@@ -1,7 +1,49 @@
 <dinewell-navbar></dinewell-navbar>
-<p>
-  residents works!
-</p>
+<h2>{{ 'RESIDENTS.RESIDENTS' | translate }}</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">{{ 'RESIDENTS.ID' | translate }}</th>
+            <th scope="col">{{ 'RESIDENTS.FIRST_NAME' | translate }}</th>
+            <th scope="col">{{ 'RESIDENTS.MIDDLE_NAME' | translate }}</th>
+            <th scope="col">{{ 'RESIDENTS.LAST_NAME' | translate }}</th>
+            <th scope="col">{{ 'COMMON.ACTION' | translate }}</th>
+        </tr>
+    </thead>
+
+    <tbody *ngFor="let resident of residents">
+        <td>{{resident.id}}</td>
+        <td>{{resident.firstName}}</td>
+        <td>{{resident.middleName}}</td>
+        <td>{{resident.lastName}}</td>
+    <td>
+        <div class="btn-group flex-btn-group-container">
+            <button type="submit"
+                    class="btn btn-info btn-sm">
+                <span class="fa fa-eye"></span>
+                <span class="d-none d-md-inline">{{ 'COMMON.VIEW' | translate }}</span>
+            </button>
+            <button type="submit"
+                    class="btn btn-danger btn-sm">
+                <span class="fa fa-eye"></span>
+                <span class="d-none d-md-inline">{{ 'COMMON.DELETE' | translate }}</span>
+            </button>
+        </div>
+    </td>
+    </tbody>
+</table>
+<div class="m-2">
+    <ngb-pagination [collectionSize]="10" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+</div>
+
+<tr>
+    <div class="btn-group flex-btn-group-container">
+        <button class="btn btn-primary float-right m-2">
+            <span class="fa fa-plus"></span> <span jhiTranslate="userManagement.home.createLabel">Create a new User</span>
+        </button>
+    </div>
+</tr>
+
 <footer>
     <dinewell-footer></dinewell-footer>
 </footer>

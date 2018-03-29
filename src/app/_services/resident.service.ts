@@ -5,12 +5,12 @@ import { Resident } from '../_models/resident.model';
 
 @Injectable()
 export class ResidentService {
-    readonly API_URL = 'http://localhost:3000';
+    readonly API_URL = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
   getResidents(): Observable<Resident[]>{
-    return this.http.get<Resident[]>(`${this.API_URL}/api-resident-list`);
+    return this.http.get<Resident[]>(`${this.API_URL}/api/residents`);
   }
 
 }

@@ -1,9 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NgbCollapseModule } from "@ng-bootstrap/ng-bootstrap";
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -12,7 +14,10 @@ describe('NavbarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ NavbarComponent ],
-        imports: [TranslateModule.forRoot({
+        imports: [
+            RouterTestingModule,
+            NgbCollapseModule.forRoot(),
+            TranslateModule.forRoot({
             loader : {
                 provide: TranslateLoader,
                 useFactory: (http: HttpClient) => new TranslateHttpLoader(http, 'assets/i18n/', '.json'),
